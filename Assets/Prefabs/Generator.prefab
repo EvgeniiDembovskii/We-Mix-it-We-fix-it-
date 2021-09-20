@@ -55,6 +55,7 @@ MonoBehaviour:
   radius: 10
   insideRad: 3
   Donut: 1
+  passage: {fileID: 1899819196628598186, guid: d893386d6988e65428d4199ac06e0ab5, type: 3}
 --- !u!212 &4820697131629626911
 SpriteRenderer:
   m_ObjectHideFlags: 0

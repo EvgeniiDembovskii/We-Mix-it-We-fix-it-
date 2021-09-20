@@ -1505,13 +1505,13 @@ PrefabInstance:
     - target: {fileID: 2815033359870005898, guid: d7fd4255cb889be4aab23eb7c19756da,
         type: 3}
       propertyPath: startTimeBtwShots
-      value: 2
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 2815033359870005898, guid: d7fd4255cb889be4aab23eb7c19756da,
         type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 5057641124924832946, guid: bcd52ad3457ef9a44ac2eaab8e84bb35,
+      objectReference: {fileID: 5057641124924832946, guid: b7f08e27038cba04d99506db11dedea3,
         type: 3}
     - target: {fileID: 2815033359870005898, guid: d7fd4255cb889be4aab23eb7c19756da,
         type: 3}
