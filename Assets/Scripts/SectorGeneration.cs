@@ -83,35 +83,53 @@ public class SectorGeneration : MonoBehaviour
             float scale = Random.Range(minScale, maxScale);
             int countNumbr = Random.Range(0, asteroids.Length);
 
-            Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);
+            //Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);
 
-            float dist = Vector2.Distance(spawnPosP, spawnPos);
+            //float dist = Vector2.Distance(spawnPosP, spawnPos);
 
-            if (Donut && dist>10)
+            if (Donut)
             {
                 if (Mathf.Pow(spawnX - transform.position.x, 2) + Mathf.Pow(spawnY - transform.position.y, 2) > Mathf.Pow(insideRad, 2))
                 {
-                    //Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);
+                    Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);
                     GameObject newThing = Instantiate(asteroids[countNumbr], spawnPos, Quaternion.Euler(0, 0, angle));
                     newThing.transform.localScale *= scale; 
                     newThing.transform.SetParent(this.gameObject.transform);
                 }
                 else
                 {
-                    asteroidAmount++;
+                   
+                    
+                    
+                    
+                    
+                    int tryCount = 1;
+                    for(int j = 0; j < tryCount; j ++)
+                    {
+                       spawnY = Random.Range(transform.position.y - maxY, transform.position.y + maxY);
+                       if (Mathf.Pow(spawnX - transform.position.x, 2) + Mathf.Pow(spawnY - transform.position.y, 2) > Mathf.Pow(insideRad, 2))
+                       {
+                            Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);
+                            GameObject newThing = Instantiate(asteroids[countNumbr], spawnPos, Quaternion.Euler(0, 0, angle));
+                            newThing.transform.localScale *= scale;
+                            newThing.transform.SetParent(this.gameObject.transform);
+                       }
+                        else
+                        {
+                            tryCount++;
+                        }
+                     }
+                    //asteroidAmount++;
                 }
             }
-            else if(!Donut&& dist >10)
+            else if(!Donut)
             {
-                //Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);
+                Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);
                 GameObject newThing = Instantiate(asteroids[countNumbr], spawnPos, Quaternion.Euler(0, 0, angle));
                 newThing.transform.localScale *= scale;
                 newThing.transform.SetParent(this.gameObject.transform);
             }
-            else if (!Donut && dist <=10 )
-            {
-                asteroidAmount++;
-            }
+           
              
             //Destroy(newPass);
 
