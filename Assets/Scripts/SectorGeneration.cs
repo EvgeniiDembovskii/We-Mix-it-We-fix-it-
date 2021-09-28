@@ -40,6 +40,7 @@ public class SectorGeneration : MonoBehaviour
     {
         int asteroidAmount = Random.Range(minAsteroidNumber, maxAsteroidNumber);
        
+        /*
             float spawnXP = Random.Range(transform.position.x - radius, transform.position.x + radius);
             float maxYP = Mathf.Sqrt(Mathf.Pow(radius, 2) - Mathf.Pow(spawnXP - transform.position.x, 2));
 
@@ -56,13 +57,8 @@ public class SectorGeneration : MonoBehaviour
         }
             
             Vector3 spawnPosP = new Vector3(spawnXP, spawnYP, 0);
-           
-           
-        
-        
-        
-        
-        
+            */
+   
         
         //float angleP = 
 
@@ -83,9 +79,7 @@ public class SectorGeneration : MonoBehaviour
             float scale = Random.Range(minScale, maxScale);
             int countNumbr = Random.Range(0, asteroids.Length);
 
-            //Vector3 spawnPos = new Vector3(spawnX, spawnY, 0);
-
-            //float dist = Vector2.Distance(spawnPosP, spawnPos);
+           
 
             if (Donut)
             {
@@ -119,7 +113,7 @@ public class SectorGeneration : MonoBehaviour
                             tryCount++;
                         }
                      }
-                    //asteroidAmount++;
+                   
                 }
             }
             else if(!Donut)
@@ -131,7 +125,7 @@ public class SectorGeneration : MonoBehaviour
             }
            
              
-            //Destroy(newPass);
+            
 
             
         }
