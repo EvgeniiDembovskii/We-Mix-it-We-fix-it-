@@ -48,12 +48,12 @@ MonoBehaviour:
   asteroids:
   - {fileID: 1296595432069063180, guid: 19cccfe3095ae684ca5d19d6bb8d5000, type: 3}
   - {fileID: 8716548995645409693, guid: 089bcb9ed017fb245843c92576700119, type: 3}
-  minScale: 0.2
-  maxScale: 0.5
-  minAsteroidNumber: 15
-  maxAsteroidNumber: 20
-  radius: 10
-  insideRad: 3
+  minScale: 0.1
+  maxScale: 0.3
+  minAsteroidNumber: 30
+  maxAsteroidNumber: 30
+  radius: 20
+  insideRad: 9
   Donut: 1
   passage: {fileID: 1899819196628598186, guid: d893386d6988e65428d4199ac06e0ab5, type: 3}
 --- !u!212 &4820697131629626911
