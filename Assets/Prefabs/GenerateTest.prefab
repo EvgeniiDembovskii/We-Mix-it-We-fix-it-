@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1564760957113525005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1564760957113524995}
+  - component: {fileID: 1564760957113525004}
+  m_Layer: 0
+  m_Name: GenerateTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1564760957113524995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564760957113525005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49.6, y: -49.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1564760957113525004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564760957113525005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bdc19a5c603c1546afae8bf93286f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asteroids:
+  - {fileID: 1296595432069063180, guid: 19cccfe3095ae684ca5d19d6bb8d5000, type: 3}
+  - {fileID: 8716548995645409693, guid: 089bcb9ed017fb245843c92576700119, type: 3}
+  minScale: 0.1
+  maxScale: 0.2
+  minAsteroidNumber: 200
+  maxAsteroidNumber: 200
+  radius: 20
+  minRad: 0
+  densityPerDist:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0.11048126
+      value: -10.71347
+      inSlope: 0.05689354
+      outSlope: 0.05689354
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.1033394
+    - serializedVersion: 3
+      time: 5.4941516
+      value: -5.522253
+      inSlope: 13.785734
+      outSlope: 13.785734
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.045090754
+      outWeight: 0.061713252
+    - serializedVersion: 3
+      time: 5.865644
+      value: 33.258102
+      inSlope: -0.74690217
+      outSlope: -0.74690217
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 7.3602185
+      value: 10.574264
+      inSlope: -4.3354883
+      outSlope: -4.3354883
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.26500043
+      outWeight: 0.23006572
+    - serializedVersion: 3
+      time: 12.1630125
+      value: 4.940166
+      inSlope: 0.7213653
+      outSlope: 0.7213653
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.4458878
+    - serializedVersion: 3
+      time: 17.815205
+      value: 9.075732
+      inSlope: 1.8813967
+      outSlope: 1.8813967
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 17.961823
+      value: 83.31976
+      inSlope: 30.256775
+      outSlope: 30.256775
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 20
+      value: 100
+      inSlope: 6.728899
+      outSlope: 6.728899
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.059251696
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

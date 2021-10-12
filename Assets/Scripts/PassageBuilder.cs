@@ -13,23 +13,46 @@ public class PassageBuilder : MonoBehaviour
     
     public int checker;
     public int radius;
+
+    public int genValue;
     
     
     
     // Start is called before the first frame update
     void Start()
     {
+        genValue = 0;
         sectorsAll = GameObject.FindGameObjectsWithTag("sector");
         checker = sectorsAll.Length;
         chosenSector = null;
+        //Generate();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("e"))
+        if (Input.GetKeyDown("t"))
         {
             Generate();
+        }
+
+
+        if (Input.GetKeyDown("r"))
+        {
+
+            
+            Debug.Log("TypeAssigned");
+            if (genValue == 0)
+            {
+                GetComponentInChildren<GenerationVol2>().type = 0;
+            }else if(genValue == 1)
+            {
+                GetComponentInChildren<GenerationVol2>().type = 1;
+            }
+            else if (genValue == 2)
+            {
+                GetComponentInChildren<GenerationVol2>().type = 2;
+            }
         }
     }
 
@@ -71,6 +94,7 @@ public class PassageBuilder : MonoBehaviour
             Vector2 passSpawn = new Vector2(xPos, yPos);
 
             GameObject newGap = Instantiate(gap, passSpawn, Quaternion.Euler(0, 0, 0));
+            chosenSector.GetComponent<PassageBuilder>().genValue ++;
         }
 
     }

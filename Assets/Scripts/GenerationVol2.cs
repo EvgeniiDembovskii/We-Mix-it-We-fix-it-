@@ -12,7 +12,11 @@ public class GenerationVol2 : MonoBehaviour
     public int radius;
     public int minRad;
 
-    [SerializeField] private AnimationCurve densityPerDist;
+    [SerializeField] private AnimationCurve densityPerDist1;
+    [SerializeField] private AnimationCurve densityPerDist2;
+    [SerializeField] private AnimationCurve densityPerDist3;
+
+    public int type;
 
     //public float angle;
 
@@ -38,6 +42,8 @@ public class GenerationVol2 : MonoBehaviour
 
         //Debug.Log(densityPerDist.Evaluate(10) + "Evaluation");
 
+        //type = GetComponentInParent<PassageBuilder>().genValue;
+
         for (int i = 0; i < asteroidAmount; i++)
         {
             float angle = Random.Range(0, 360);
@@ -56,7 +62,17 @@ public class GenerationVol2 : MonoBehaviour
             float scale = Random.Range(minScale, maxScale);
 
             float dice = Random.Range(0,100);
-            float chance = densityPerDist.Evaluate(cDist);
+            float chance = 0;
+            if (type == 0) {
+                 chance = densityPerDist1.Evaluate(cDist);
+            }else if(type == 1)
+            {
+                 chance = densityPerDist2.Evaluate(cDist);
+            }else
+            {
+                 chance = densityPerDist3.Evaluate(cDist);
+            }
+           
             //float chance = cDist/2;
             //float chance = -1;
             if (dice < chance)
