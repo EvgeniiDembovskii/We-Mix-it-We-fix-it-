@@ -30,10 +30,7 @@ public class GenerationVol2 : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown("e"))
-        {
-            Generate();
-        }
+       
     }
 
     public void Generate()

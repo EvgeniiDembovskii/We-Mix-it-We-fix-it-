@@ -31,33 +31,26 @@ public class PassageBuilder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("t"))
-        {
-            Generate();
-        }
-
-
-        if (Input.GetKeyDown("r"))
-        {
-
-            
-            Debug.Log("TypeAssigned");
-            if (genValue == 0)
-            {
-                GetComponentInChildren<GenerationVol2>().type = 0;
-            }else if(genValue == 1)
-            {
-                GetComponentInChildren<GenerationVol2>().type = 1;
-            }
-            else if (genValue == 2)
-            {
-                GetComponentInChildren<GenerationVol2>().type = 2;
-            }
-        }
+        
     }
 
-
-    public void Generate()
+    public void AssineType()
+    {
+        Debug.Log("TypeAssigned");
+        if (genValue == 0)
+        {
+            GetComponentInChildren<GenerationVol2>().type = 0;
+        }
+        else if (genValue == 1)
+        {
+            GetComponentInChildren<GenerationVol2>().type = 1;
+        }
+        else if (genValue == 2)
+        {
+            GetComponentInChildren<GenerationVol2>().type = 2;
+        }
+    }
+    public void GeneratePassages()
     {
         if (sectorsAll.Length != 1)
         {
