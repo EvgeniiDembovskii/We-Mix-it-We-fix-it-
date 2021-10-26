@@ -15,13 +15,14 @@ public class PassageBuilder : MonoBehaviour
     public int radius;
 
     public int genValue;
+    public bool works = false;
     
     
     
     // Start is called before the first frame update
     void Start()
     {
-        genValue = 0;
+        //genValue = 0;
         sectorsAll = GameObject.FindGameObjectsWithTag("sector");
         checker = sectorsAll.Length;
         chosenSector = null;
@@ -34,9 +35,9 @@ public class PassageBuilder : MonoBehaviour
         
     }
 
-    public void AssineType()
+    public void AssigneType()
     {
-        Debug.Log("TypeAssigned");
+       
         if (genValue == 0)
         {
             GetComponentInChildren<GenerationVol2>().type = 0;
@@ -49,9 +50,11 @@ public class PassageBuilder : MonoBehaviour
         {
             GetComponentInChildren<GenerationVol2>().type = 2;
         }
+        Debug.Log("TypeAssigned" + genValue);
     }
     public void GeneratePassages()
     {
+        sectorsAll = GameObject.FindGameObjectsWithTag("sector");
         if (sectorsAll.Length != 1)
         {
 
@@ -87,8 +90,14 @@ public class PassageBuilder : MonoBehaviour
             Vector2 passSpawn = new Vector2(xPos, yPos);
 
             GameObject newGap = Instantiate(gap, passSpawn, Quaternion.Euler(0, 0, 0));
+            newGap.transform.SetParent(this.transform);
             chosenSector.GetComponent<PassageBuilder>().genValue ++;
         }
 
+    }
+
+    public void DebugFunction()
+    {
+        Debug.Log("LOBA IS THICK");
     }
 }

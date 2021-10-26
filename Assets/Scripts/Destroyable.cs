@@ -25,7 +25,8 @@ public class Destroyable : MonoBehaviour
 
             if (massCount != null) 
             { 
-               // massCount.Calculate(); 
+                massCount.Calculate();
+                Debug.Log("ObjectDestroyed_And_Mass_Calculated");
             }
 
             if (!this.gameObject.transform.root.CompareTag("Player"))
@@ -47,6 +48,7 @@ public class Destroyable : MonoBehaviour
             health = health - damage;
             Debug.LogWarning("1damage");
             Destroy(other.gameObject);
+            
         }
 
 

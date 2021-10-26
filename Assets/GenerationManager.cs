@@ -5,10 +5,10 @@ using UnityEngine;
 public class GenerationManager : MonoBehaviour
 {
     public GameObject sector;
-    private List<GameObject> allSectors = new List<GameObject>();
-    [SerializeField] private int mapWidth;
-    [SerializeField] private int mapHeight;
-    [SerializeField] private int distToSector;
+    public List<GameObject> allSectors = new List<GameObject>() ;
+    public int mapWidth;
+    public int mapHeight;
+    public int distToSector;
     private bool onOFF;
     
     // Start is called before the first frame update
@@ -35,7 +35,7 @@ public class GenerationManager : MonoBehaviour
                 if (onOFF)
                 {
 
-                    yPos = transform.position.y + (distToSector / 2) - (distToSector*j);
+                    yPos = transform.position.y + (distToSector / 2) - (distToSector * j);
                     onOFF = false;
                 }
                 else
@@ -49,15 +49,32 @@ public class GenerationManager : MonoBehaviour
                 allSectors.Add(newSector);
             }
         }
-
         int index = allSectors.Count;
         for(int l = 0; l < index; l++)
         {
-            //allSectors[l].GetComponent<PassageBuilder>().GeneratePassages();
-            Debug.Log("UGA BUGA");
+            //allSectors[l].gameObject.GetComponent<PassageBuilder>().DebugFunction();
+            // allSectors[l].gameObject.SetActive(false);
+            // allSectors[l].gameObject.GetComponent<Transform>().position = new Vector3(0, 0, 0);
+            allSectors[l].gameObject.GetComponent<PassageBuilder>().GeneratePassages();
+            //Debug.Log("UGA BUGA"); 
 
         }
-        
+        for (int l = 0; l < index; l++)
+        {
+           
+            allSectors[l].gameObject.GetComponent<PassageBuilder>().AssigneType();
+            //Debug.Log("UGA BUGA");
+
+        }
+
+        for (int l = 0; l < index; l++)
+        {
+
+            allSectors[l].gameObject.GetComponentInChildren<GenerationVol2>().Generate();
+            //Debug.Log("UGA BUGA");
+
+        }
+
 
     }
 }

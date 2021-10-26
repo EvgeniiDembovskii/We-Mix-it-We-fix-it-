@@ -21,7 +21,7 @@ public class MassCalculator : MonoBehaviour
 
     private void Update()
     {
-        blocks = GetComponentsInChildren<UgaBoogaTag>();
+        /*blocks = GetComponentsInChildren<UgaBoogaTag>();
         Debug.Log(blocks.Length);
 
        
@@ -34,12 +34,25 @@ public class MassCalculator : MonoBehaviour
         if (!manager.GameStarted)
         {
             detailsScript.detailsCollected = detailsScript.detailsOverallCollected - (blocks.Length * 25);
-        }
+        }*/
     }
     // Update is called once per frame
     public void Calculate()
     {
-        
-       
+        blocks = GetComponentsInChildren<UgaBoogaTag>();
+        Debug.Log(blocks.Length);
+
+
+
+
+
+        mass = (blocks.Length + 1) * 0.25f;
+        rb.mass = mass;
+
+        if (!manager.GameStarted)
+        {
+            detailsScript.detailsCollected = detailsScript.detailsOverallCollected - (blocks.Length * 25);
+        }
+
     }
 }

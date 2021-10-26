@@ -110,9 +110,11 @@ public class CreatorBlockShip : MonoBehaviour
                 Destroy(destroy);
 
             }
-        
+
         //
         //massCount.Calculate();
+        gameObject.GetComponentInParent<MassCalculator>().Calculate();
+
     }
 
     public  void rotateMesh()

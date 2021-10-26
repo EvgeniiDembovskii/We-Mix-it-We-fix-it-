@@ -67,6 +67,7 @@ public class Healing : MonoBehaviour
             detailsCollected = detailsCollected - NeededAmount;
             NeededAmount = NeededAmount + 25;
         }
+        gameObject.GetComponent<MassCalculator>().Calculate();
         
     }
 }
