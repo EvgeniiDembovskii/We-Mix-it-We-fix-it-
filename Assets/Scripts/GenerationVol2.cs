@@ -15,6 +15,7 @@ public class GenerationVol2 : MonoBehaviour
     public int radius;
     public int minRad;
 
+
     [SerializeField] private AnimationCurve densityPerDist1 = null;
     [SerializeField] private AnimationCurve densityPerDist2 = null;
     [SerializeField] private AnimationCurve densityPerDist3 = null;
@@ -57,7 +58,7 @@ public class GenerationVol2 : MonoBehaviour
                 spawnObject = asteroids;
                 minObjScale = minScale ;
                 maxObjScale = maxScale ;
-                arrayNumber = Random.Range(0, asteroids.Length);
+                //arrayNumber = Random.Range(0, asteroids.Length);
                 Debug.Log("HeyHo_K=0");
             }
             else if (k == 1)
@@ -66,24 +67,39 @@ public class GenerationVol2 : MonoBehaviour
                 spawnObject = enemies;
                 minObjScale = 1;
                 maxObjScale = 1;
-                if (type == 0)
-                {
-                    //arrayNumber = Random.Range(0, asteroids.Length);
-                    arrayNumber = Random.Range(0, 1);
-                    
-                }else if (type == 1)
-                {
-                    arrayNumber = Random.Range(1, 2);
-                }
-                else if (type == 2)
-                {
-                    arrayNumber = 3;
-                }
+                
                 Debug.Log("HeyHo_K=1");
             }
 
             for (int i = 0; i < amountObj; i++)
             {
+                if (k == 1)
+                {
+                    if (type == 0)
+                    {
+                        //arrayNumber = Random.Range(0, asteroids.Length);
+                        arrayNumber = Random.Range(0, 2);
+                        Debug.Log("ENEMY SHIP TYPE" + arrayNumber);
+
+                    }
+                    else if (type == 1)
+                    {
+                        arrayNumber = Random.Range(1, 3);
+                    }
+                    else if (type == 2)
+                    {
+                        arrayNumber = 3;
+                    }
+                    else if (type == 3)
+                    {
+                        arrayNumber = 4;
+                    }
+                }
+                else
+                {
+                    arrayNumber = Random.Range(0, asteroids.Length);
+                }
+                
                 float angle = Random.Range(0, 360);
 
                 float cDist = Random.Range(minRad, radius);

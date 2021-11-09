@@ -17,6 +17,7 @@ public class AItriggerShooting : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        brainScript = AIship.GetComponent<AIshipBechavior>();
         if (other.gameObject.CompareTag("Player"))
         {
             brainScript.ShootEm = true;
@@ -52,6 +53,7 @@ public class AItriggerShooting : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        brainScript = AIship.GetComponent<AIshipBechavior>();
         if (other.gameObject.CompareTag("Player"))
         {
             brainScript.ShootEm = false;

@@ -8,6 +8,7 @@ public class AItriggerLeft : MonoBehaviour
    
     private AIshipBechavior brainScript;
     private float dist;
+    private List<GameObject> enemiesClose = new List<GameObject>();
     void Start()
     {
         brainScript = AIship.GetComponent<AIshipBechavior>();
@@ -16,51 +17,64 @@ public class AItriggerLeft : MonoBehaviour
 
     // Update is called once per frame
 
-   
-
-
-    private void OnTriggerStay2D(Collider2D other)
+    private void FixedUpdate()
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (enemiesClose.Count != 0)
         {
-            dist = Vector2.Distance(AIship.transform.position, other.transform.position);
-            Debug.DrawLine(AIship.transform.position, other.transform.position);
-
-            if (dist < 4)
+            for (int i = 0; i < enemiesClose.Count; i++)
             {
-                brainScript.DodgeLeft = true;
+                if (enemiesClose[i].gameObject != null)
+                {
+                    dist = Vector2.Distance(enemiesClose[i].transform.position, AIship.transform.position);
+                    if (dist < 4)
+                    {
+                        brainScript.DodgeLeft = true;
+                    }
+                    else
+                    {
+                        brainScript.DodgeLeft = false;
+                    }
+                }
             }
-            else
-            {
-                brainScript.DodgeLeft = false;
-            }
-           
         }
+    }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (brainScript == null) { brainScript = AIship.GetComponent<AIshipBechavior>(); }
         if (other.gameObject.CompareTag("Player"))
         {
             brainScript.PlayerDetectedLeft = true;
         }
 
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            enemiesClose.Add(other.gameObject);
 
 
 
+            //dist = Vector2.Distance(AIship.transform.position, other.transform.position);
+            //Debug.DrawLine(AIship.transform.position, other.transform.position);
+
+
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            brainScript.DodgeLeft = false;
-            
-        }
-
+        if (brainScript == null) { brainScript = AIship.GetComponent<AIshipBechavior>(); }
         if (other.gameObject.CompareTag("Player"))
         {
             brainScript.PlayerDetectedLeft = false;
-            
+
+        }
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            brainScript.DodgeLeft = false;
+            enemiesClose.Remove(other.gameObject);
         }
     }
 
-    
+
 }
