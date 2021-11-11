@@ -14,6 +14,7 @@ public class EngineScript : MonoBehaviour
    // public Text debug;
     public Sprite EngineOn;
     public Sprite EngineOFF;
+    public GameObject fire;
 
     public bool notAI;
     public bool triggered;
@@ -91,12 +92,14 @@ public class EngineScript : MonoBehaviour
         shipRB.AddForceAtPosition(myDirection * speed, myPos);
        // Debug.DrawLine(this.gameObject.transform.position, shipRB.position);
         //debug.text = " Kinda works";
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = EngineOn;
+        //this.gameObject.GetComponent<SpriteRenderer>().sprite = EngineOn;
+        fire.SetActive(true);
         
     }
 
     public void EngineOff()
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sprite = EngineOFF;
+        //this.gameObject.GetComponent<SpriteRenderer>().sprite = EngineOFF;
+        fire.SetActive(false);
     }
 }

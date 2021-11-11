@@ -9,11 +9,15 @@ public class Destroyable : MonoBehaviour
     public GameObject details;
 
     private MassCalculator massCount;
+    private DissolveEffect dissolveScript;
 
     void Start()
     {
         defaulthealth = health;
         massCount = GetComponentInParent<MassCalculator>();
+        // dissolveScript = GetComponent<DissolveEffect>();
+        dissolveScript = gameObject.AddComponent<DissolveEffect>();
+       // GetComponent<SpriteRenderer>().material = 
     }
 
     // Update is called once per frame
@@ -21,20 +25,30 @@ public class Destroyable : MonoBehaviour
     {
         if ( health <= 0)
         {
-            this.gameObject.SetActive(false);
+            dissolveScript.dissolving = true;
 
-            if (massCount != null) 
-            { 
-                massCount.Calculate();
-                Debug.Log("ObjectDestroyed_And_Mass_Calculated");
-            }
-
-            if (!this.gameObject.transform.root.CompareTag("Player"))
+            if (dissolveScript.fade == 1f)
             {
-                GameObject newDetails = Instantiate(details, this.transform.position, this.transform.rotation);
+
+
+                this.gameObject.SetActive(false);
+
+                if (massCount != null)
+                {
+                    massCount.Calculate();
+                    Debug.Log("ObjectDestroyed_And_Mass_Calculated");
+                }
+
+                if (!this.gameObject.transform.root.CompareTag("Player"))
+                {
+                    GameObject newDetails = Instantiate(details, this.transform.position, this.transform.rotation);
+                }
+
+                health = defaulthealth;
+                dissolveScript.fade = 0f;
+                dissolveScript.dissolving = false;
+               
             }
-           
-            health = defaulthealth;
         }
     }
 

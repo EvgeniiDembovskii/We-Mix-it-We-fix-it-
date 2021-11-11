@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: starsSpriteMat
-  m_Shader: {fileID: -6465566751694194690, guid: 3528a7bd8595ee4469f0fb69ffe0c790,
+  m_Name: BlasterMat 2
+  m_Shader: {fileID: -6465566751694194690, guid: 6b72d912863ac5d4396f0b46a5e9b52a,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
   m_LightmapFlags: 4
@@ -19,15 +19,13 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs:
-    - _SampleTexture2D_73C9FE70_Texture_1:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+    m_TexEnvs: []
     m_Floats:
-    - Vector1_556FBD9C: 46.64
-    - Vector1_709D4952: 0.94
-    - Vector1_C211D8DB: 0.005
-    - Vector1_D0F18B70: 47.1
-    m_Colors: []
+    - Vector1_BD43075E: -0.9
+    - Vector1_C96C7556: 0.28
+    - Vector1_DABC3B1C: 1.05
+    - Vector1_EA2721B3: 0.95
+    m_Colors:
+    - Color_483172CB: {r: 1.4245284, g: 1.9204941, b: 2, a: 0}
+    - Color_9E106977: {r: 2.6082375, g: 0.6072477, b: 0, a: 0}
   m_BuildTextureStacks: []
